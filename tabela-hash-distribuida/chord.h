@@ -20,10 +20,10 @@ public:
     void insertKey(Aluno aluno);
     bool retrieveKey(int ra, Aluno &aluno);
     bool deleteKey(int ra);
-    void printNode();
+    void printNode() const;
     void updateFingerTable(const std::vector<int> &allNodes);
     int findSuccessor(int key);
-    int getNodeID() const { return nodeID; } 
+    int getNodeID() const { return nodeID; }
 };
 
 #endif

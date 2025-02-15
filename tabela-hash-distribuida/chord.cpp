@@ -9,7 +9,7 @@ ChordNode::ChordNode(int id)
 void ChordNode::insertKey(Aluno aluno)
 {
     keyValueStore[aluno.getRa()] = aluno;
-    std::cout << "Aluno " << aluno.getNome() << " armazenado no no " << nodeID << std::endl;
+    std::cout << "Aluno " << aluno.getNome() << " armazenado no noh " << nodeID << std::endl;
 }
 
 bool ChordNode::retrieveKey(int ra, Aluno &aluno)
@@ -27,16 +27,16 @@ bool ChordNode::deleteKey(int ra)
     if (keyValueStore.find(ra) != keyValueStore.end())
     {
         keyValueStore.erase(ra);
-        std::cout << "Aluno com RA " << ra << " removido do no " << nodeID << std::endl;
+        std::cout << "Aluno com RA " << ra << " removido do noh " << nodeID << std::endl;
         return true;
     }
     return false;
 }
 
-void ChordNode::printNode()
+void ChordNode::printNode() const
 {
     std::cout << "No " << nodeID << " armazenando: ";
-    for (auto &pair : keyValueStore)
+    for (const auto &pair : keyValueStore)
     {
         std::cout << "[" << pair.first << " -> " << pair.second.getNome() << "] ";
     }
